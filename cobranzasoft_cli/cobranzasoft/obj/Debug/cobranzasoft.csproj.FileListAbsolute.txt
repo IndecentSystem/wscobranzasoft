@@ -1,0 +1,5 @@
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft\bin\cobranzasoft.dll
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft\bin\cobranzasoft.pdb
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft\obj\Debug\ResolveAssemblyReference.cache
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft\obj\Debug\cobranzasoft.dll
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft\obj\Debug\cobranzasoft.pdb

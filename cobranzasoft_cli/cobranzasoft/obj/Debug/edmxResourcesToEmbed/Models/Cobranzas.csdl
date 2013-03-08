@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CobranzasModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CobranzasEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="CobranzasModel.Cliente" />
+    <EntitySet Name="Deudor" EntityType="CobranzasModel.Deudor" />
+    <AssociationSet Name="FK_Deudor_Cliente" Association="CobranzasModel.FK_Deudor_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Deudor" EntitySet="Deudor" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomCliente" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="true" />
+    <Property Name="codCliente" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Deudor" Relationship="CobranzasModel.FK_Deudor_Cliente" FromRole="Cliente" ToRole="Deudor" />
+  </EntityType>
+  <EntityType Name="Deudor">
+    <Key>
+      <PropertyRef Name="idDeudor" />
+    </Key>
+    <Property Name="idDeudor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codDeudor" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="nomDeudor" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
+    <Property Name="tipDocumento" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="numDocumento" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="fecRegistro" Type="DateTime" Nullable="false" />
+    <Property Name="fecActualizar" Type="DateTime" Nullable="false" />
+    <Property Name="flgActivo" Type="Boolean" Nullable="false" />
+    <Property Name="idCliente" Type="Int32" />
+    <NavigationProperty Name="Cliente" Relationship="CobranzasModel.FK_Deudor_Cliente" FromRole="Deudor" ToRole="Cliente" />
+  </EntityType>
+  <Association Name="FK_Deudor_Cliente">
+    <End Role="Cliente" Type="CobranzasModel.Cliente" Multiplicity="0..1" />
+    <End Role="Deudor" Type="CobranzasModel.Deudor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Deudor">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

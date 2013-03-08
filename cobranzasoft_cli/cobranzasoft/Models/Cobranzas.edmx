@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CobranzasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CobranzasModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="CobranzasModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Deudor" EntityType="CobranzasModel.Store.Deudor" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Deudor_Cliente" Association="CobranzasModel.Store.FK_Deudor_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Deudor" EntitySet="Deudor" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nomCliente" Type="nchar" Nullable="false" MaxLength="30" />
+          <Property Name="codCliente" Type="nchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Deudor">
+          <Key>
+            <PropertyRef Name="idDeudor" />
+          </Key>
+          <Property Name="idDeudor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codDeudor" Type="nchar" Nullable="false" MaxLength="20" />
+          <Property Name="nomDeudor" Type="nchar" Nullable="false" MaxLength="100" />
+          <Property Name="tipDocumento" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="numDocumento" Type="nchar" Nullable="false" MaxLength="20" />
+          <Property Name="fecRegistro" Type="datetime" Nullable="false" />
+          <Property Name="fecActualizar" Type="datetime" Nullable="false" />
+          <Property Name="flgActivo" Type="bit" Nullable="false" />
+          <Property Name="idCliente" Type="int" />
+        </EntityType>
+        <Association Name="FK_Deudor_Cliente">
+          <End Role="Cliente" Type="CobranzasModel.Store.Cliente" Multiplicity="0..1" />
+          <End Role="Deudor" Type="CobranzasModel.Store.Deudor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Deudor">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CobranzasModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CobranzasEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cliente" EntityType="CobranzasModel.Cliente" />
+          <EntitySet Name="Deudor" EntityType="CobranzasModel.Deudor" />
+          <AssociationSet Name="FK_Deudor_Cliente" Association="CobranzasModel.FK_Deudor_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Deudor" EntitySet="Deudor" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomCliente" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="true" />
+          <Property Name="codCliente" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Deudor" Relationship="CobranzasModel.FK_Deudor_Cliente" FromRole="Cliente" ToRole="Deudor" />
+        </EntityType>
+        <EntityType Name="Deudor">
+          <Key>
+            <PropertyRef Name="idDeudor" />
+          </Key>
+          <Property Name="idDeudor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codDeudor" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="nomDeudor" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="tipDocumento" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="numDocumento" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="fecRegistro" Type="DateTime" Nullable="false" />
+          <Property Name="fecActualizar" Type="DateTime" Nullable="false" />
+          <Property Name="flgActivo" Type="Boolean" Nullable="false" />
+          <Property Name="idCliente" Type="Int32" />
+          <NavigationProperty Name="Cliente" Relationship="CobranzasModel.FK_Deudor_Cliente" FromRole="Deudor" ToRole="Cliente" />
+        </EntityType>
+        <Association Name="FK_Deudor_Cliente">
+          <End Role="Cliente" Type="CobranzasModel.Cliente" Multiplicity="0..1" />
+          <End Role="Deudor" Type="CobranzasModel.Deudor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Deudor">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CobranzasModelStoreContainer" CdmEntityContainer="CobranzasEntities2">
+          <EntitySetMapping Name="Cliente"><EntityTypeMapping TypeName="CobranzasModel.Cliente"><MappingFragment StoreEntitySet="Cliente">
+            <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+            <ScalarProperty Name="nomCliente" ColumnName="nomCliente" />
+            <ScalarProperty Name="codCliente" ColumnName="codCliente" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Deudor"><EntityTypeMapping TypeName="CobranzasModel.Deudor"><MappingFragment StoreEntitySet="Deudor">
+            <ScalarProperty Name="idDeudor" ColumnName="idDeudor" />
+            <ScalarProperty Name="codDeudor" ColumnName="codDeudor" />
+            <ScalarProperty Name="nomDeudor" ColumnName="nomDeudor" />
+            <ScalarProperty Name="tipDocumento" ColumnName="tipDocumento" />
+            <ScalarProperty Name="numDocumento" ColumnName="numDocumento" />
+            <ScalarProperty Name="fecRegistro" ColumnName="fecRegistro" />
+            <ScalarProperty Name="fecActualizar" ColumnName="fecActualizar" />
+            <ScalarProperty Name="flgActivo" ColumnName="flgActivo" />
+            <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Cobranzas">
+        <EntityTypeShape EntityType="CobranzasModel.Cliente" Width="1.5" PointX="0.75" PointY="1.5" Height="1.7879850260416672" IsExpanded="true" />
+        <EntityTypeShape EntityType="CobranzasModel.Deudor" Width="1.5" PointX="3" PointY="1" Height="2.9417936197916656" IsExpanded="true" />
+        <AssociationConnector Association="CobranzasModel.FK_Deudor_Cliente" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.3939925130208337" />
+          <ConnectorPoint PointX="3" PointY="2.3939925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

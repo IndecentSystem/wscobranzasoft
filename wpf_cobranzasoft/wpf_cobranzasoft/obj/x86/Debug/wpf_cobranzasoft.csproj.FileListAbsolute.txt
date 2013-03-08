@@ -1,0 +1,13 @@
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\bin\Debug\wpf_cobranzasoft.exe
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\bin\Debug\wpf_cobranzasoft.pdb
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\MainWindow.baml
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\MainWindow.g.cs
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\App.g.cs
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\wpf_cobranzasoft_MarkupCompile.cache
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\wpf_cobranzasoft.g.resources
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\wpf_cobranzasoft.Properties.Resources.resources
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\ResGen.read.1.tlog
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\ResGen.write.1.tlog
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\wpf_cobranzasoft.exe
+G:\indecentsystem\wpf_cobranzasoft\wpf_cobranzasoft\obj\x86\Debug\wpf_cobranzasoft.pdb

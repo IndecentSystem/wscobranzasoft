@@ -1,0 +1,8 @@
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft.Tests\bin\Debug\cobranzasoft.Tests.dll.config
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft.Tests\bin\Debug\cobranzasoft.Tests.dll
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft.Tests\bin\Debug\cobranzasoft.Tests.pdb
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft.Tests\bin\Debug\cobranzasoft.dll
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft.Tests\bin\Debug\cobranzasoft.pdb
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft.Tests\obj\Debug\ResolveAssemblyReference.cache
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft.Tests\obj\Debug\cobranzasoft.Tests.dll
+G:\indecentsystem\cobranzasoft_cli\cobranzasoft.Tests\obj\Debug\cobranzasoft.Tests.pdb

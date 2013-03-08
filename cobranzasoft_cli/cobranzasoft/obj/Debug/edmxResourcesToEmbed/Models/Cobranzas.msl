@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CobranzasModelStoreContainer" CdmEntityContainer="CobranzasEntities2">
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="CobranzasModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nomCliente" ColumnName="nomCliente" />
+          <ScalarProperty Name="codCliente" ColumnName="codCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deudor">
+      <EntityTypeMapping TypeName="CobranzasModel.Deudor">
+        <MappingFragment StoreEntitySet="Deudor">
+          <ScalarProperty Name="idDeudor" ColumnName="idDeudor" />
+          <ScalarProperty Name="codDeudor" ColumnName="codDeudor" />
+          <ScalarProperty Name="nomDeudor" ColumnName="nomDeudor" />
+          <ScalarProperty Name="tipDocumento" ColumnName="tipDocumento" />
+          <ScalarProperty Name="numDocumento" ColumnName="numDocumento" />
+          <ScalarProperty Name="fecRegistro" ColumnName="fecRegistro" />
+          <ScalarProperty Name="fecActualizar" ColumnName="fecActualizar" />
+          <ScalarProperty Name="flgActivo" ColumnName="flgActivo" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
